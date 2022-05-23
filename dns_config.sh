@@ -73,7 +73,7 @@ sudo chown -R named:named /etc/bind/
 sudo chmod 750 -R /etc/bind
 
 echo "configurando zona direta"
-cat > /etc/bind/direta.db << "EOF"
+cat > /etc/bind/zona_direta.db << "EOF"
 $TTL 8h ;
 @       IN      SOA     dns.elton.ddns.net. root.elton.ddns.net. (
                         20211228 ; serial
@@ -92,8 +92,8 @@ firewall        IN      A       192.168.15.56
 proxy   IN      CNAME   firewall
 EOF
 
-echo "configurando zone inversa"
-cat > /etc/bind/inversa.db << "EOF"
+echo "configurando zone reversa"
+cat > /etc/bind/zone_reversa.db << "EOF"
 $TTL 8h ;
 @       IN      SOA     dns.elton.ddns.net. root.elton.ddns.net. (
                         20211228 ; serial
